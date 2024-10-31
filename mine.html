@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Nothing</title>
+    <link rel="icon" type="image/x-icon" href="img/mic.webp">
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="first">
+           <h1>Text to Speech  <span>Convertor..</span></h1>
+        </div>
+        <div class="second">
+            <h3>Enter Text and Convert to Speech</h3>
+        </div>
+        <div class="third">
+            <textarea id="text1" rows="5" placeholder="Write anything here......"></textarea>
+        </div>
+        <div class="butt">
+            <button class="btn" >Listen</button>
+            <button class="btn">Stop</button>
+        </div>
+    </div>
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(img/ts.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  
+    .first{
+        padding: 10px;
+        color: blanchedalmond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .second{
+        padding: 20px;
+        display: flex;
+        color: wheat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .third{
+        width: 100%;
+        height: 30vh;
+        border: 1px solid yellow;
+        padding: 20px;
+        border-radius: 16px;
+        background: whitesmoke;
+        box-shadow: 0px 3px 15px rgha(113,115,119,0.5);
+    }
+    textarea{
+       display: flex;
+        width: 100%;
+        height: 30vh;
+        background: transparent;
+        font-size: 20px;
+        text-align: top;
+        cursor: text;
+        color: green;
+        text-size-adjust: 100%;
+    
+    }
+    .btn{
+        padding: 15px;
+        color:  black;
+        cursor: pointer;
+        position: relative;
+        border-radius: 12px;
+        margin: 10%;
+        width:70%;
+        font-size: 16px;
+        background-color: yellow;
+        background-image: url();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .butt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    .first h1 span{
+        color: yellowgreen;
+    }
+</style>
+<script>
+    let button=document.querySelectorAll(".btn");
+    button.forEach((item)=>{
+         let Speech=new SpeechSynthesisUtterance();
+        item.addEventListener("click",()=>{
+        if(item.innerHTML=="Listen"){
+        Speech.text=document.getElementById("text1").value;
+        window.speechSynthesis.speak(Speech);
+    }else if(item.innerHTML=="Stop"){
+        window.speechSynthesis.cancel();
+        }
+        console.log(item.innerHTML)
+    });
+})
+</script>
+</body>
+</html>
