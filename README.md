@@ -1,0 +1,2 @@
+This is a Basic Calculator, a simple yet powerful web application designed for quick and easy calculations. Built using HTML, CSS, and JavaScript, this calculator features a clean and intuitive interface that allows users to perform essential arithmetic operations like addition, subtraction, multiplication, 
+and division effortlessly. With a straightforward layout, you can input numbers and select operations with ease, receiving immediate results displayed  on the screen.
